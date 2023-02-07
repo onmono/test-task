@@ -40,10 +40,7 @@ func main() {
 		select {
 		case v, ok := <-ch:
 			if ok {
-				fmt.Println("worker id passed:", v)
-				if v == 8 {
-					return
-				}
+				fmt.Printf("worker with id %d passed.\n", v)
 			}
 		default:
 			<-time.NewTicker(1 * time.Second).C
